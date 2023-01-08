@@ -36,8 +36,9 @@ We can also rename a switch using the hostname command like this in terminal con
 
 To save a configuration, we copy the config from RAM of the switch (the current configuration) called `running-config` and copy it in the hard drive (NVRAM) of the switch in a special file named `startup-config`, the command is :
 
+```
 Switch# copy running-config startup-config
-
+```
 
 
 
