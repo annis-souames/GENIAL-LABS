@@ -94,7 +94,9 @@ int fa0/0.1
 ip default-gateway 172.17.99.201
 ```
 
-We can use `show ip route` to see the networks connected to the router.
+We can use `show ip route` to see the networks connected to the router, it should show all the networks/VLANs created. 
+
+
 
 
 
