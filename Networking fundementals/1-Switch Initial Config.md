@@ -44,4 +44,4 @@ Switch# copy running-config startup-config
 ## Useful Commands:
 
 - Show available interfaces : `show int brief` 
-- 
+- Show running config : `sh run`
