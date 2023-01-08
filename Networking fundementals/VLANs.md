@@ -76,14 +76,25 @@ In this case, untagged frames will belong to VLAN99 which is the native vlan. We
 We can create subinterfaces for a port in the router, this way it can play the role of multiple ports, each subinterface will carry frames of a given vlan, we need to assign an IP address for each subinterface and 
 then make them dot1q aware (so they use 802.1q encapsulation). 
 ```
+int fa0/0
+(conf-if) no shut
 int fa0/0.1
 (conf-subif)encapsulation dot1q <vlan-id>
-(conf-subif)no shut
 (conf-subif)ip address <ip-address> 255.255.255.0
+// For native vlan use (like vlan 99)
+(conf-subif)encapsulation dot1q 99 native
+
 ```
 
-Note that the ip address must be in the same network as the vlan ip address. 
+**Note 1 :**  the ip address must be in the same network as the vlan ip address.
 
+**Note 2 :** The IP set for the native vlan on the router subinterface should beused as defaultgateway 
+
+```
+ip default-gateway 172.17.99.201
+```
+
+We can use `show ip route` to see the networks connected to the router.
 
 
 
