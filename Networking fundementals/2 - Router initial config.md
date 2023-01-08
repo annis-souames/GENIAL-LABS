@@ -19,4 +19,6 @@ conf t
 Note that the subnet mask in a router interface cannot be 255.255.255.255. We can repeat the same procedure for each router interface or we can use a range command : 
 `int range gi0/0/0-1`
 
+Also note that the IP address used in the router interface (or native subinterface) should be used as a default gateway on the switch. 
+
 We can copy router config like a switch using `copy running-config startup-config` 
